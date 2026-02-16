@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import ProductCard from "@/components/ProductCard";
 import { useWishlist } from "@/context/WishlistContext";
 import { Heart, Star, ArrowLeft, ShoppingBag, Truck, Shield, Sparkles } from "lucide-react";
+import PremiumBadge from "@/components/PremiumBadge";
 import { toast } from "sonner";
 
 const ProductDetail = () => {
@@ -145,6 +146,8 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
+
+        {product.price > 400 && <PremiumBadge />}
 
         {relatedProducts.length > 0 && (
           <section className="mt-20">
