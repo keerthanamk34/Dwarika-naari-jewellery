@@ -1,7 +1,6 @@
 import { FaWhatsapp } from "react-icons/fa";
-import { SITE_CONFIG } from "@/data/config";
+import { SITE_CONFIG, products } from "@/config";
 import { useLocation } from "react-router-dom";
-import { products } from "@/data/products";
 
 const WhatsAppButton = () => {
   const location = useLocation();

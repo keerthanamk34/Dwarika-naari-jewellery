@@ -5,7 +5,7 @@ import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
 import { Heart, ShoppingBag, Trash2, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
-import { Product } from "@/data/products";
+import { Product } from "@/config";
 
 const Wishlist = () => {
   const navigate = useNavigate();
