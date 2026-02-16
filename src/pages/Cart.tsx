@@ -27,10 +27,10 @@ const Cart = () => {
             Discover our exquisite jewelry collection.
           </p>
           <Link
-            to="/collections"
+            to="/shop"
             className="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase bg-gold text-primary-foreground px-8 py-3.5 hover:bg-gold-light transition-colors"
           >
-            Explore Collections
+            Explore Shop
           </Link>
         </div>
       </Layout>
@@ -45,10 +45,10 @@ const Cart = () => {
     <Layout>
       <div className="container mx-auto px-4 lg:px-8 py-10">
         <Link
-          to="/collections"
+          to="/shop"
           className="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase text-muted-foreground hover:text-gold transition-colors mb-8"
         >
-          <ArrowLeft size={14} /> add more shine
+          <ArrowLeft size={14} /> Continue Shopping
         </Link>
 
         <h1 className="font-display text-4xl  font-semibold mb-10">
