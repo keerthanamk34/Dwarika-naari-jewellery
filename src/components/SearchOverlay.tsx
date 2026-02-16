@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import { products } from "@/data/products";
+import { products } from "@/config";
 import { Link } from "react-router-dom";
 
 interface Props {

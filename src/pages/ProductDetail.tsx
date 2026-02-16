@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useMemo } from "react";
-import { products } from "@/data/products";
+import { products } from "@/config";
 import { useCart } from "@/context/CartContext";
 import Layout from "@/components/Layout";
 import ProductCard from "@/components/ProductCard";

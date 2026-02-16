@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Heart, Star } from "lucide-react";
-import { Product } from "@/data/products";
+import { Product } from "@/config";
 import { useWishlist } from "@/context/WishlistContext";
 import { useCart } from "@/context/CartContext";
 import { toast } from "sonner";

@@ -1,6 +1,6 @@
 import { CartItem } from "@/context/CartContext";
 
-import { SITE_CONFIG } from "@/data/config";
+import { SITE_CONFIG } from "@/config";
 
 const WHATSAPP_NUMBER = SITE_CONFIG.whatsappNumber;
 

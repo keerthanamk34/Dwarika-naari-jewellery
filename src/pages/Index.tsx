@@ -6,7 +6,7 @@ import collectionBridal from "@/assets/collection-bridal.jpg";
 import collectionEveryday from "@/assets/collection-everyday.jpg";
 import collectionFestive from "@/assets/collection-festive.jpg";
 import collectionContemporary from "@/assets/collection-contemporary.jpg";
-import { products } from "@/data/products";
+import { products } from "@/config";
 import ProductCard from "@/components/ProductCard";
 import Layout from "@/components/Layout";
 import AdBanner from "@/components/AdBanner";

@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { products } from "@/data/products";
+import { products } from "@/config";
 import ProductCard from "@/components/ProductCard";
 import Layout from "@/components/Layout";
 import { SlidersHorizontal, X } from "lucide-react";
