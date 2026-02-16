@@ -84,7 +84,7 @@ const Checkout = () => {
             <p className="mt-2 text-muted-foreground font-body text-sm">Add items before checkout.</p>
             <div className="mt-6">
               <Button asChild className="tracking-widest uppercase">
-                <Link to="/collections">Explore Collections</Link>
+                <Link to="/shop">Explore Shop</Link>
               </Button>
             </div>
           </div>

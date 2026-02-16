@@ -1,6 +1,8 @@
 import { CartItem } from "@/context/CartContext";
 
-const WHATSAPP_NUMBER = "919876543210"; // Replace with actual WhatsApp number
+import { SITE_CONFIG } from "@/data/config";
+
+const WHATSAPP_NUMBER = SITE_CONFIG.whatsappNumber;
 
 const formatINR = (amount: number) =>
   new Intl.NumberFormat("en-IN", {

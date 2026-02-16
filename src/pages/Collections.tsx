@@ -47,7 +47,7 @@ const Collections = () => {
       <div className="container mx-auto px-4 lg:px-8 py-10">
         <div className="text-center mb-10">
           <p className="font-body text-xs tracking-[0.4em] uppercase text-gold mb-2">Explore Our</p>
-          <h1 className="font-display text-4xl lg:text-5xl font-semibold text-foreground">Collections</h1>
+          <h1 className="font-display text-4xl lg:text-5xl font-semibold text-foreground">Shop Collection</h1>
         </div>
 
         <div className="flex items-center justify-between mb-8 border-b border-border pb-4">

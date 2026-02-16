@@ -30,7 +30,8 @@ function App() {
               <Sonner />
               <Routes>
                 <Route path="/" element={<Index />} />
-                <Route path="/collections" element={<Collections />} />
+              <Route path="/shop" element={<Collections />} />
+              <Route path="/collections" element={<Collections />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/wishlist" element={<Wishlist />} />
