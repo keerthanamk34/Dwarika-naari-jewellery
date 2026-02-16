@@ -9,6 +9,8 @@ import collectionContemporary from "@/assets/collection-contemporary.jpg";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import Layout from "@/components/Layout";
+import AdBanner from "@/components/AdBanner";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect, useRef } from "react";
 
 const heroSlides = [
@@ -29,11 +31,23 @@ const testimonials = [
   { name: "Kavya Reddy", text: "The temple choker was the highlight of my wedding. Everyone complimented the intricate ruby work. Truly a masterpiece.", rating: 5 },
 ];
 
+const SectionDivider = () => (
+  <div className="flex items-center justify-center gap-4 py-2">
+    <div className="h-px w-16 bg-gradient-to-r from-transparent to-gold/30" />
+    <span className="text-gold text-xs">✦</span>
+    <div className="h-px w-16 bg-gradient-to-l from-transparent to-gold/30" />
+  </div>
+);
+
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [email, setEmail] = useState("");
   const bestsellers = products.filter((p) => p.bestseller);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const collectionsReveal = useScrollReveal();
+  const bestsellersReveal = useScrollReveal();
+  const testimonialsReveal = useScrollReveal();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -60,21 +74,20 @@ const Index = () => {
           </div>
         ))}
         <div className="absolute inset-0 flex items-center">
-          <div className="container mx-auto px-4 lg:px-8 animate-fade-in">
-            <p className="font-body text-xs tracking-[0.4em] uppercase text-gold-light mb-4">
+          <div className="container mx-auto px-4 lg:px-8">
+            <p className="font-body text-xs tracking-[0.4em] uppercase text-gold-light mb-4 animate-fade-in">
               {heroSlides[currentSlide].subtitle}
             </p>
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-8 whitespace-pre-line leading-tight">
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-8 whitespace-pre-line leading-tight animate-fade-in" style={{ animationDelay: "0.15s" }}>
               {heroSlides[currentSlide].title}
             </h1>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Link
                 to="/collections"
-                className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase bg-gold text-primary-foreground px-8 py-3.5 hover:bg-gold-light transition-all duration-300"
+                className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase bg-gold text-primary-foreground px-8 py-3.5 hover:bg-gold-light hover:scale-105 transition-all duration-300"
               >
                 {heroSlides[currentSlide].cta} <ArrowRight size={14} />
               </Link>
-             
             </div>
           </div>
         </div>
@@ -85,8 +98,17 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Ad Banner */}
+      <AdBanner />
+
+      {/* Section Divider */}
+      <SectionDivider />
+
       {/* Featured Collections */}
-      <section className="container mx-auto px-4 lg:px-8 py-20">
+      <section
+        ref={collectionsReveal.ref}
+        className={`container mx-auto px-4 lg:px-8 py-20 transition-all duration-700 ${collectionsReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      >
         <div className="text-center mb-14">
           <p className="font-body text-xs tracking-[0.4em] uppercase text-gold mb-2">Curated For You</p>
           <h2 className="font-display text-4xl lg:text-5xl font-semibold text-foreground">Our Collections</h2>
@@ -94,7 +116,7 @@ const Index = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {collections.map((col) => (
             <Link key={col.title} to="/collections" className="group relative aspect-[3/4] overflow-hidden">
-              <img src={col.image} alt={col.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={col.image} alt={col.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="font-display text-xl text-primary-foreground mb-1">{col.title}</h3>
@@ -108,8 +130,13 @@ const Index = () => {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Best Sellers Carousel */}
-      <section className="bg-card py-20">
+      <section
+        ref={bestsellersReveal.ref}
+        className={`bg-card py-20 transition-all duration-700 ${bestsellersReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      >
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-end justify-between mb-12">
             <div>
@@ -117,10 +144,10 @@ const Index = () => {
               <h2 className="font-display text-4xl lg:text-5xl font-semibold text-foreground">Best Sellers</h2>
             </div>
             <div className="hidden md:flex items-center gap-2">
-              <button onClick={() => scroll("left")} className="w-10 h-10 border border-border flex items-center justify-center hover:border-gold hover:text-gold transition-colors" aria-label="Scroll left">
+              <button onClick={() => scroll("left")} className="w-10 h-10 border border-border flex items-center justify-center hover:border-gold hover:text-gold hover:scale-105 transition-all" aria-label="Scroll left">
                 <ChevronLeft size={18} />
               </button>
-              <button onClick={() => scroll("right")} className="w-10 h-10 border border-border flex items-center justify-center hover:border-gold hover:text-gold transition-colors" aria-label="Scroll right">
+              <button onClick={() => scroll("right")} className="w-10 h-10 border border-border flex items-center justify-center hover:border-gold hover:text-gold hover:scale-105 transition-all" aria-label="Scroll right">
                 <ChevronRight size={18} />
               </button>
             </div>
@@ -135,15 +162,20 @@ const Index = () => {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Testimonials */}
-      <section className="container mx-auto px-4 lg:px-8 py-20">
+      <section
+        ref={testimonialsReveal.ref}
+        className={`container mx-auto px-4 lg:px-8 py-20 transition-all duration-700 ${testimonialsReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      >
         <div className="text-center mb-14">
           <p className="font-body text-xs tracking-[0.4em] uppercase text-gold mb-2">What Our Customers Say</p>
           <h2 className="font-display text-4xl lg:text-5xl font-semibold text-foreground">Testimonials</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
-            <div key={i} className="border border-border p-8 text-center">
+            <div key={i} className="border border-border p-8 text-center hover:border-gold/40 hover:shadow-lg transition-all duration-300">
               <div className="flex justify-center gap-1 mb-4">
                 {Array.from({ length: t.rating }).map((_, j) => (
                   <Star key={j} size={14} className="fill-gold text-gold" />
@@ -173,7 +205,7 @@ const Index = () => {
               className="flex-1 bg-primary-foreground/10 border border-primary-foreground/20 px-4 py-3 font-body text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-gold transition-colors"
               required
             />
-            <button type="submit" className="bg-gold text-primary-foreground font-body text-xs tracking-widest uppercase px-6 py-3 hover:bg-gold-light transition-colors">
+            <button type="submit" className="bg-gold text-primary-foreground font-body text-xs tracking-widest uppercase px-6 py-3 hover:bg-gold-light hover:scale-105 transition-all duration-300">
               Subscribe
             </button>
           </form>

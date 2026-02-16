@@ -4,13 +4,15 @@ import { products } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import Layout from "@/components/Layout";
 import ProductCard from "@/components/ProductCard";
+import { useWishlist } from "@/context/WishlistContext";
 import { Heart, Star, ArrowLeft, ShoppingBag, Truck, Shield, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const product = products.find((p) => p.id === Number(id));
-  const { addToCart, wishlist, toggleWishlist } = useCart();
+  const { addToCart } = useCart();
+  const { isInWishlist, addToWishlist, removeFromWishlist } = useWishlist();
   const [activeTab, setActiveTab] = useState<"description" | "details" | "care">("description");
 
   const formatPrice = (price: number) =>
@@ -29,7 +31,7 @@ const ProductDetail = () => {
     );
   }
 
-  const isWishlisted = wishlist.includes(product.id);
+  const isWishlisted = isInWishlist(product.id);
   const relatedProducts = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
 
   const handleAddToCart = () => {
@@ -116,7 +118,10 @@ const ProductDetail = () => {
                 <ShoppingBag size={14} /> Add to Cart
               </button>
               <button
-                onClick={() => { toggleWishlist(product.id); toast.success(isWishlisted ? "Removed from wishlist" : "Added to wishlist"); }}
+              onClick={() => {
+                if (isWishlisted) { removeFromWishlist(product.id); toast.success("Removed from wishlist"); }
+                else { addToWishlist(product); toast.success("Added to wishlist"); }
+              }}
                 className="p-4 border border-border hover:border-gold transition-colors"
                 aria-label="Toggle wishlist"
               >
