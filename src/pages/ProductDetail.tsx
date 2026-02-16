@@ -1,11 +1,11 @@
 import { useParams, Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { products } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import Layout from "@/components/Layout";
 import ProductCard from "@/components/ProductCard";
 import { useWishlist } from "@/context/WishlistContext";
-import { Heart, Star, ArrowLeft, ShoppingBag, Truck, Shield, Sparkles } from "lucide-react";
+import { Heart, Star, ArrowLeft, ShoppingBag, Truck, Shield, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import PremiumBadge from "@/components/PremiumBadge";
 import { toast } from "sonner";
 
@@ -15,7 +15,13 @@ const ProductDetail = () => {
   const { addToCart } = useCart();
   const { isInWishlist, addToWishlist, removeFromWishlist } = useWishlist();
   const [activeTab, setActiveTab] = useState<"description" | "details" | "care">("description");
+  const [activeImage, setActiveImage] = useState(0);
 
+  const allImages = useMemo(() => {
+    if (!product) return [];
+    const imgs = [product.image, ...(product.images || [])];
+    return [...new Set(imgs)];
+  }, [product]);
   const formatPrice = (price: number) =>
     new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(price);
 
@@ -49,13 +55,34 @@ const ProductDetail = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Image */}
-          <div className="relative aspect-square overflow-hidden bg-card group">
-            <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-            {product.originalPrice && (
-              <span className="absolute top-4 left-4 bg-accent text-accent-foreground font-body text-[10px] tracking-wider uppercase px-3 py-1">Sale</span>
-            )}
-            {product.bestseller && !product.originalPrice && (
-              <span className="absolute top-4 left-4 bg-gold text-primary-foreground font-body text-[10px] tracking-wider uppercase px-3 py-1">Bestseller</span>
+          <div className="space-y-3">
+            <div className="relative aspect-square overflow-hidden bg-card group">
+              <img src={allImages[activeImage]} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              {product.originalPrice && (
+                <span className="absolute top-4 left-4 bg-accent text-accent-foreground font-body text-[10px] tracking-wider uppercase px-3 py-1">Sale</span>
+              )}
+              {product.bestseller && !product.originalPrice && (
+                <span className="absolute top-4 left-4 bg-gold text-primary-foreground font-body text-[10px] tracking-wider uppercase px-3 py-1">Bestseller</span>
+              )}
+              {allImages.length > 1 && (
+                <>
+                  <button onClick={() => setActiveImage((prev) => (prev - 1 + allImages.length) % allImages.length)} className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 backdrop-blur-sm p-1.5 hover:bg-background transition-colors" aria-label="Previous image">
+                    <ChevronLeft size={16} />
+                  </button>
+                  <button onClick={() => setActiveImage((prev) => (prev + 1) % allImages.length)} className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/70 backdrop-blur-sm p-1.5 hover:bg-background transition-colors" aria-label="Next image">
+                    <ChevronRight size={16} />
+                  </button>
+                </>
+              )}
+            </div>
+            {allImages.length > 1 && (
+              <div className="flex gap-2 overflow-x-auto pb-1">
+                {allImages.map((img, i) => (
+                  <button key={i} onClick={() => setActiveImage(i)} className={`shrink-0 w-16 h-16 lg:w-20 lg:h-20 overflow-hidden border-2 transition-all duration-200 ${activeImage === i ? "border-gold" : "border-transparent opacity-60 hover:opacity-100"}`}>
+                    <img src={img} alt={`${product.name} view ${i + 1}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
             )}
           </div>
 

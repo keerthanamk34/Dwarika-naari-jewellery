@@ -15,6 +15,7 @@ export interface Product {
   rating: number;
   reviews: number;
   image: string;
+  images?: string[];
   category: string;
   occasion: string;
   material: string;
