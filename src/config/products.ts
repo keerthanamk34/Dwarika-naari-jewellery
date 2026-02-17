@@ -1,34 +1,3 @@
-<<<<<<< HEAD
-=======
-import jewelry1 from "@/assets/new image1.jpeg";
-import jewelry2 from "@/assets/new image 2.jpeg";
-import jewelry3 from "@/assets/new img3.jpeg";
-import jewelry4 from "@/assets/new img 4.jpeg";
-import jewelry5 from "@/assets/new img 5.jpeg";
-import jewelry6 from "@/assets/new img 7.jpeg";
-import jewelry7 from "@/assets/new img 8.jpeg";
-import jewelry8 from "@/assets/new img 9.jpeg";
-
->>>>>>> f7a06a277323f42a90484d183d8a24addab6a471
-export interface Product {
-  id: number;
-  name: string;
-  price: number;
-  originalPrice?: number;
-  rating: number;
-  reviews: number;
-  image: string;
-  images?: string[];
-  category: string;
-  occasion: string;
-  material: string;
-  description: string;
-  details: string;
-  bestseller?: boolean;
-}
-
-<<<<<<< HEAD
-// -------------------- IMPORT ALL IMAGES --------------------
 import jewelry1_1 from "@/assets/Product_images/PRO01-01-1100.jpg";
 import jewelry1_2 from "@/assets/Product_images/PRO01-02-1100.jpg";
 
@@ -160,162 +129,58 @@ import jewelry34_1 from "@/assets/Product_images/PRO34-01-200.jpg";
 
 import jewelry35_1 from "@/assets/Product_images/PRO35-01-200.jpg";
 import jewelry35_2 from "@/assets/Product_images/PRO35-02-200.jpg";
-// import jewelry35_3 from "@/assets/Product_images/PRO35-03-200.jpg";
 
-// -------------------- PRODUCTS ARRAY --------------------
+export interface Product {
+  id: number;
+  name: string;
+  price: number;
+  originalPrice?: number;
+  rating: number;
+  reviews: number;
+  image: string;
+  images?: string[];
+  category: string;
+  occasion: string;
+  material: string;
+  description: string;
+  details: string;
+  bestseller?: boolean;
+}
+
 export const products: Product[] = [
-  {id: 1, name: "Elegant Bridal Necklace Set", price: 1100, rating: 4.5, reviews: 32, image: jewelry1_2, images: [jewelry1_1,jewelry1_2], category: "Bridal Jewelry", occasion: "Wedding", material: "Gold Plated", description: "Elegant traditional jewelry piece crafted for bridal charm.", details: "Premium finish jewelry perfect for weddings and celebrations.", bestseller: true },
+  { id: 1, name: "Elegant Bridal Necklace Set", price: 1100, rating: 4.5, reviews: 32, image: jewelry1_2, images: [jewelry1_1, jewelry1_2], category: "Bridal Jewelry", occasion: "Wedding", material: "Gold Plated", description: "Elegant traditional jewelry piece crafted for bridal charm.", details: "Premium finish jewelry perfect for weddings and celebrations.", bestseller: true },
   { id: 2, name: "Classic Everyday Earrings Set", price: 350, rating: 4.2, reviews: 18, image: jewelry2_1, images: [jewelry2_1], category: "Everyday Elegance", occasion: "Casual", material: "Alloy", description: "Minimal elegant jewelry for daily wear.", details: "Lightweight and comfortable traditional design." },
-  { id: 3, name: "Festive Gold Necklace Set", price: 350, rating: 4.6, reviews: 44, image: jewelry3_3, images: [jewelry3_1,jewelry3_2,jewelry3_3,jewelry3_4,jewelry3_5], category: "Festive Wear", occasion: "Wedding", material: "Gold Plated", description: "Multi-layer elegant festive jewelry.", details: "Beautiful craftsmanship with detailed finishing.", bestseller: true },
-  { id: 4, name: "Contemporary Floral Necklace Set", price: 850, rating: 4.4, reviews: 28, image: jewelry4_3, images: [jewelry4_1,jewelry4_2,jewelry4_3,jewelry4_4], category: "Contemporary Designs", occasion: "Festive", material: "Gold Plated", description: "Modern floral-inspired design.", details: "Ideal for wedding and grand occasions." },
-  { id: 5, name: "Elegant Layered Necklace Set", price: 800, rating: 4.3, reviews: 22, image: jewelry5_1, images: [jewelry5_1,jewelry5_2,jewelry5_3], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Elegant festive jewelry.", details: "Premium polished design." },
+  { id: 3, name: "Festive Gold Necklace Set", price: 350, rating: 4.6, reviews: 44, image: jewelry3_3, images: [jewelry3_1, jewelry3_2, jewelry3_3, jewelry3_4, jewelry3_5], category: "Festive Wear", occasion: "Wedding", material: "Gold Plated", description: "Multi-layer elegant festive jewelry.", details: "Beautiful craftsmanship with detailed finishing.", bestseller: true },
+  { id: 4, name: "Contemporary Floral Necklace Set", price: 850, rating: 4.4, reviews: 28, image: jewelry4_3, images: [jewelry4_1, jewelry4_2, jewelry4_3, jewelry4_4], category: "Contemporary Designs", occasion: "Festive", material: "Gold Plated", description: "Modern floral-inspired design.", details: "Ideal for wedding and grand occasions." },
+  { id: 5, name: "Elegant Layered Necklace Set", price: 800, rating: 4.3, reviews: 22, image: jewelry5_1, images: [jewelry5_1, jewelry5_2, jewelry5_3], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Elegant festive jewelry.", details: "Premium polished design." },
   { id: 6, name: "Minimal Everyday Earrings", price: 350, rating: 4.1, reviews: 12, image: jewelry6_1, images: [jewelry6_1], category: "Everyday", occasion: "Casual", material: "Alloy", description: "Minimal everyday earrings.", details: "Lightweight casual wear." },
-  { id: 7, name: "Elegant Earrings Set", price: 400, rating: 4.2, reviews: 14, image: jewelry7_1, images: [jewelry7_1,jewelry7_2], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Elegant layered necklace.", details: "Premium finish design." },
-  { id: 8, name: "Modern Festive Necklace", price: 700, rating: 4.3, reviews: 18, image: jewelry8_1, images: [jewelry8_1,jewelry8_2], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Modern festive necklace.", details: "Luxury polished finish." },
-  { id: 9, name: "Stylish Everyday Bangles", price: 200, rating: 4, reviews: 10, image: jewelry9_1, images: [jewelry9_1,jewelry9_2,jewelry9_3,jewelry9_4], category: "Everyday Elegance", occasion: "Casual", material: "Alloy", description: "Stylish and elegant earrings for daily wear.", details: "Lightweight, comfortable, and perfect for casual occasions." },
-  { id: 9, name: "Elegant Ring", price: 200, rating: 4, reviews: 10, image: jewelry9_4, images: [jewelry9_1,jewelry9_2,jewelry9_3,jewelry9_4], category: "Everyday Elegance", occasion: "Casual", material: "Alloy", description: "Stylish and elegant earrings for daily wear.", details: "Lightweight, comfortable, and perfect for casual occasions." },
-  { id: 10, name: "Traditional Earrings Set", price: 350, rating: 4, reviews: 17, image: jewelry10_1, images: [jewelry10_1,jewelry10_2,jewelry10_3], category: "Festive Wear", occasion: "Wedding", material: "Gold Plated", description: "Traditional necklace set with intricate designs.", details: "Perfect for weddings and festive celebrations." },
-  { id: 11, name: "Elegant Bangles Set", price: 400, rating: 4, reviews: 16, image: jewelry11_1, images: [jewelry11_1,jewelry11_2,jewelry11_3], category: "Festive Wear", occasion: "Wedding", material: "Gold Plated", description: "Elegant necklace with gem embellishments.", details: "Adds charm and sophistication to your festive outfit." },
-  { id:  12, name: "Crystal Everyday Braclet", price: 350, rating: 4, reviews: 13, image: jewelry12_1, images: [jewelry12_1,jewelry12_2,jewelry12_3], category: "Everyday Elegance", occasion: "Casual", material: "Alloy", description: "Sleek necklace set with crystal detailing.", details: "Ideal for casual and semi-formal occasions." },
-  { id: 13, name: "Traditional Braclet", price: 300, rating: 4, reviews: 11, image: jewelry13_1, images: [jewelry13_1,jewelry13_2,jewelry13_3,jewelry13_4], category: "Everyday", occasion: "Casual", material: "Alloy", description: "Traditional style earrings.", details: "Lightweight and stylish." },
-  { id: 14, name: "Minimal Elegant Bangles", price: 300, rating: 4, reviews: 9, image: jewelry14_1, images: [jewelry14_1,jewelry14_2,jewelry14_3], category: "Casual", occasion: "Everyday", material: "Alloy", description: "Minimal elegant earrings.", details: "Perfect for office wear." },
-  { id: 15, name: "Festive Bangles", price: 600, rating: 4.4, reviews: 20, image: jewelry15_1, images: [jewelry15_1,jewelry15_2], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Festive layered necklace.", details: "Premium polished finish." },
-  { id: 16, name: "Elegant Bangles", price: 500, rating: 4.5, reviews: 27, image: jewelry16_2, images: [jewelry16_1,jewelry16_2,jewelry16_3,jewelry16_4,jewelry16_5], category: "Wedding", occasion: "Festive", material: "Gold Plated", description: "Elegant wedding jewelry.", details: "Rich traditional finish.", bestseller: true },
-  { id: 17, name: "Festive Modern Bangle", price: 600, rating: 4.4, reviews: 22, image: jewelry17_2, images: [jewelry17_1,jewelry17_2,jewelry17_3,jewelry17_4], category: "Festive", occasion: "Wedding", material: "Alloy", description: "Beautiful festive jewelry.", details: "Modern traditional blend." },
-  { id: 18, name: "Daily Elegant Braclet", price: 400, rating: 4.2, reviews: 15, image: jewelry18_1, images: [jewelry18_1,jewelry18_2], category: "Everyday", occasion: "Casual", material: "Alloy", description: "Elegant daily earrings.", details: "Lightweight comfort design." },
-  { id: 19, name: "Premium Festive Necklace", price: 500, rating: 4.3, reviews: 18, image: jewelry19_1, images: [jewelry19_1,jewelry19_2,jewelry19_3], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Premium festive necklace.", details: "Traditional gold shine finish." },
-  // { id: 20, name: "Bridal Statement Necklace", price: 1000, rating: 4.7, reviews: 40, image: jewelry20_1, images: [jewelry20_1,jewelry20_2,jewelry20_3], category: "Bridal", occasion: "Wedding", material: "Gold Plated", description: "Bridal statement necklace.", details: "Luxury finish wedding jewelry." },
-  { id: 21, name: "Elegant Bridal Design", price: 1000, rating: 4.6, reviews: 36, image: jewelry21_1, images: [jewelry21_1,jewelry21_2,jewelry21_3], category: "Bridal", occasion: "Wedding", material: "Gold Plated", description: "Elegant bridal design.", details: "Premium gold polish finish." },
-  { id: 22, name: "Traditional   Braclet", price: 1000, rating: 4.5, reviews: 30, image: jewelry22_1, images: [jewelry22_1,jewelry22_2], category: "Bridal", occasion: "Wedding", material: "Gold Plated", description: "Traditional wedding necklace.", details: "Classic temple style jewelry." },
-  { id: 23, name: "Simple Stylish Braclet", price: 350, rating: 4.1, reviews: 12, image: jewelry23_2, images: [jewelry23_1,jewelry23_2], category: "Everyday", occasion: "Casual", material: "Alloy", description: "Simple stylish earrings.", details: "Lightweight casual wear." },
-  { id: 24, name: "Minimal Daily Braclet", price: 350, rating: 4.1, reviews: 10, image: jewelry24_1, images: [jewelry24_1,jewelry24_2], category: "Casual", occasion: "Everyday", material: "Alloy", description: "Minimal daily earrings.", details: "Comfortable lightweight design." },
-  { id: 25, name: "Elegant Festive Bangles", price: 400, rating: 4.3, reviews: 19, image: jewelry25_3, images: [jewelry25_1,jewelry25_2,jewelry25_3,jewelry25_4,jewelry25_5], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Elegant festive jewelry.", details: "Premium polished design." },
-  { id: 26, name: "Stylish Festive Bangles", price: 700, rating: 4.4, reviews: 23, image: jewelry26_1, images: [jewelry26_1,jewelry26_2,jewelry26_3], category: "Festive", occasion: "Everyday", material: "Alloy", description: "Stylish festive necklace.", details: "Perfect for celebrations." },
-  { id: 27, name: "Everyday Elegant Necklace", price: 300, rating: 4, reviews: 9, image: jewelry27_1, images: [jewelry27_1,jewelry27_2], category: "Casual", occasion: "Everyday", material: "Alloy", description: "Everyday elegant earrings.", details: "Comfortable daily wear." },
-  { id: 28, name: "Festive Special Necklace", price: 700, rating: 4.4, reviews: 20, image: jewelry28_1, images: [jewelry28_1,jewelry28_2], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Festive special necklace.", details: "Premium shine finish." },
-  { id: 29, name: "Traditional Elegant Necklace", price: 600, rating: 4.3, reviews: 16, image: jewelry29_1, images: [jewelry29_1,jewelry29_2], category: "Festive", occasion: "Everyday", material: "Alloy", description: "Traditional elegant necklace.", details: "Rich polished finish." },
-  { id: 30, name: "Wedding Stylish Bangles", price: 700, rating: 4.5, reviews: 26, image: jewelry30_1, images: [jewelry30_1,jewelry30_2,jewelry30_3], category: "Wedding", occasion: "Festive", material: "Gold Plated", description: "Wedding statement jewelry.", details: "Premium bridal finish." },
-  { id: 31, name: "Elegant Wedding Bangles", price: 800, rating: 4.6, reviews: 29, image: jewelry31_1, images: [jewelry31_1,jewelry31_2,jewelry31_3], category: "Wedding", occasion: "Festive", material: "Gold Plated", description: "Elegant wedding necklace.", details: "Luxury polished design." },
-  { id: 32, name: "Festive Traditional Necklace", price: 700, rating: 4.4, reviews: 18, image: jewelry32_1, images: [jewelry32_1,jewelry32_2,jewelry32_3], category: "Festive", occasion: "Wedding", material: "Alloy", description: "Festive traditional necklace.", details: "Beautiful detailed finish." },
-  { id: 33, name: "Grand Bridal Bangles", price: 1000, rating: 4.7, reviews: 35, image: jewelry33_1, images: [jewelry33_1,jewelry33_2,jewelry33_3], category: "Bridal", occasion: "Wedding", material: "Gold Plated", description: "Grand bridal necklace.", details: "Luxury royal design." },
-  { id: 34, name: "Festive Braclet", price: 200, rating: 4, reviews: 8, image: jewelry34_1, images: [jewelry34_1], category: "Casual", occasion: "Everyday", material: "Alloy", description: "Budget everyday earrings.", details: "Lightweight simple wear." },
-//   { id: 35, name: "Stylish Affordable Earrings", price: 200, rating: 4, reviews: 9, image: jewelry35_1, images: [jewelry35_1,jewelry35_2,jewelry35_3], category: "Casual", occasion: "Everyday", material: "Alloy", description: "Stylish affordable earrings.", details: "Comfortable daily wear design." },
-// 
+  { id: 7, name: "Elegant Earrings Set", price: 400, rating: 4.2, reviews: 14, image: jewelry7_1, images: [jewelry7_1, jewelry7_2], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Elegant layered necklace.", details: "Premium finish design." },
+  { id: 8, name: "Modern Festive Necklace", price: 700, rating: 4.3, reviews: 18, image: jewelry8_1, images: [jewelry8_1, jewelry8_2], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Modern festive necklace.", details: "Luxury polished finish." },
+  { id: 9, name: "Stylish Everyday Bangles", price: 200, rating: 4, reviews: 10, image: jewelry9_1, images: [jewelry9_1, jewelry9_2, jewelry9_3, jewelry9_4], category: "Everyday Elegance", occasion: "Casual", material: "Alloy", description: "Stylish and elegant earrings for daily wear.", details: "Lightweight, comfortable, and perfect for casual occasions." },
+  { id: 10, name: "Traditional Earrings Set", price: 350, rating: 4, reviews: 17, image: jewelry10_1, images: [jewelry10_1, jewelry10_2, jewelry10_3], category: "Festive Wear", occasion: "Wedding", material: "Gold Plated", description: "Traditional necklace set with intricate designs.", details: "Perfect for weddings and festive celebrations." },
+  { id: 11, name: "Elegant Bangles Set", price: 400, rating: 4, reviews: 16, image: jewelry11_1, images: [jewelry11_1, jewelry11_2, jewelry11_3], category: "Festive Wear", occasion: "Wedding", material: "Gold Plated", description: "Elegant necklace with gem embellishments.", details: "Adds charm and sophistication to your festive outfit." },
+  { id: 12, name: "Crystal Everyday Bracelet", price: 350, rating: 4, reviews: 13, image: jewelry12_1, images: [jewelry12_1, jewelry12_2, jewelry12_3], category: "Everyday Elegance", occasion: "Casual", material: "Alloy", description: "Sleek necklace set with crystal detailing.", details: "Ideal for casual and semi-formal occasions." },
+  { id: 13, name: "Traditional Bracelet", price: 300, rating: 4, reviews: 11, image: jewelry13_1, images: [jewelry13_1, jewelry13_2, jewelry13_3, jewelry13_4], category: "Everyday", occasion: "Casual", material: "Alloy", description: "Traditional style earrings.", details: "Lightweight and stylish." },
+  { id: 14, name: "Minimal Elegant Bangles", price: 300, rating: 4, reviews: 9, image: jewelry14_1, images: [jewelry14_1, jewelry14_2, jewelry14_3], category: "Casual", occasion: "Everyday", material: "Alloy", description: "Minimal elegant earrings.", details: "Perfect for office wear." },
+  { id: 15, name: "Festive Bangles", price: 600, rating: 4.4, reviews: 20, image: jewelry15_1, images: [jewelry15_1, jewelry15_2], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Festive layered necklace.", details: "Premium polished finish." },
+  { id: 16, name: "Elegant Bangles", price: 500, rating: 4.5, reviews: 27, image: jewelry16_2, images: [jewelry16_1, jewelry16_2, jewelry16_3, jewelry16_4, jewelry16_5], category: "Wedding", occasion: "Festive", material: "Gold Plated", description: "Elegant wedding jewelry.", details: "Rich traditional finish.", bestseller: true },
+  { id: 17, name: "Festive Modern Bangle", price: 600, rating: 4.4, reviews: 22, image: jewelry17_2, images: [jewelry17_1, jewelry17_2, jewelry17_3, jewelry17_4], category: "Festive", occasion: "Wedding", material: "Alloy", description: "Beautiful festive jewelry.", details: "Modern traditional blend." },
+  { id: 18, name: "Daily Elegant Bracelet", price: 400, rating: 4.2, reviews: 15, image: jewelry18_1, images: [jewelry18_1, jewelry18_2], category: "Everyday", occasion: "Casual", material: "Alloy", description: "Elegant daily earrings.", details: "Lightweight comfort design." },
+  { id: 19, name: "Premium Festive Necklace", price: 500, rating: 4.3, reviews: 18, image: jewelry19_1, images: [jewelry19_1, jewelry19_2, jewelry19_3], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Premium festive necklace.", details: "Traditional gold shine finish." },
+  { id: 20, name: "Bridal Statement Necklace", price: 1000, rating: 4.7, reviews: 40, image: jewelry20_1, images: [jewelry20_1, jewelry20_2, jewelry20_3], category: "Bridal", occasion: "Wedding", material: "Gold Plated", description: "Bridal statement necklace.", details: "Luxury finish wedding jewelry." },
+  { id: 21, name: "Elegant Bridal Design", price: 1000, rating: 4.6, reviews: 36, image: jewelry21_1, images: [jewelry21_1, jewelry21_2, jewelry21_3], category: "Bridal", occasion: "Wedding", material: "Gold Plated", description: "Elegant bridal design.", details: "Premium gold polish finish." },
+  { id: 22, name: "Traditional Bracelet", price: 1000, rating: 4.5, reviews: 30, image: jewelry22_1, images: [jewelry22_1, jewelry22_2], category: "Bridal", occasion: "Wedding", material: "Gold Plated", description: "Traditional wedding necklace.", details: "Classic temple style jewelry." },
+  { id: 23, name: "Simple Stylish Bracelet", price: 350, rating: 4.1, reviews: 12, image: jewelry23_2, images: [jewelry23_1, jewelry23_2], category: "Everyday", occasion: "Casual", material: "Alloy", description: "Simple stylish earrings.", details: "Lightweight casual wear." },
+  { id: 24, name: "Minimal Daily Bracelet", price: 350, rating: 4.1, reviews: 10, image: jewelry24_1, images: [jewelry24_1, jewelry24_2], category: "Casual", occasion: "Everyday", material: "Alloy", description: "Minimal daily earrings.", details: "Comfortable lightweight design." },
+  { id: 25, name: "Elegant Festive Bangles", price: 400, rating: 4.3, reviews: 19, image: jewelry25_3, images: [jewelry25_1, jewelry25_2, jewelry25_3, jewelry25_4, jewelry25_5], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Elegant festive jewelry.", details: "Premium polished design." },
+  { id: 26, name: "Stylish Festive Bangles", price: 700, rating: 4.4, reviews: 23, image: jewelry26_1, images: [jewelry26_1, jewelry26_2, jewelry26_3], category: "Festive", occasion: "Everyday", material: "Alloy", description: "Stylish festive necklace.", details: "Perfect for celebrations." },
+  { id: 27, name: "Everyday Elegant Necklace", price: 300, rating: 4, reviews: 9, image: jewelry27_1, images: [jewelry27_1, jewelry27_2], category: "Casual", occasion: "Everyday", material: "Alloy", description: "Everyday elegant earrings.", details: "Comfortable daily wear." },
+  { id: 28, name: "Festive Special Necklace", price: 700, rating: 4.4, reviews: 20, image: jewelry28_1, images: [jewelry28_1, jewelry28_2], category: "Festive", occasion: "Wedding", material: "Gold Plated", description: "Festive special necklace.", details: "Premium shine finish." },
+  { id: 29, name: "Traditional Elegant Necklace", price: 600, rating: 4.3, reviews: 16, image: jewelry29_1, images: [jewelry29_1, jewelry29_2], category: "Festive", occasion: "Everyday", material: "Alloy", description: "Traditional elegant necklace.", details: "Rich polished finish." },
+  { id: 30, name: "Wedding Stylish Bangles", price: 700, rating: 4.5, reviews: 26, image: jewelry30_1, images: [jewelry30_1, jewelry30_2, jewelry30_3], category: "Wedding", occasion: "Festive", material: "Gold Plated", description: "Wedding statement jewelry.", details: "Premium bridal finish." },
+  { id: 31, name: "Elegant Wedding Bangles", price: 800, rating: 4.6, reviews: 29, image: jewelry31_1, images: [jewelry31_1, jewelry31_2, jewelry31_3], category: "Wedding", occasion: "Festive", material: "Gold Plated", description: "Elegant wedding necklace.", details: "Luxury polished design." },
+  { id: 32, name: "Festive Traditional Necklace", price: 700, rating: 4.4, reviews: 18, image: jewelry32_1, images: [jewelry32_1, jewelry32_2, jewelry32_3], category: "Festive", occasion: "Wedding", material: "Alloy", description: "Festive traditional necklace.", details: "Beautiful detailed finish." },
+  { id: 33, name: "Grand Bridal Bangles", price: 1000, rating: 4.7, reviews: 35, image: jewelry33_1, images: [jewelry33_1, jewelry33_2, jewelry33_3], category: "Bridal", occasion: "Wedding", material: "Gold Plated", description: "Grand bridal necklace.", details: "Luxury royal design." },
+  { id: 34, name: "Festive Bracelet", price: 200, rating: 4, reviews: 8, image: jewelry34_1, images: [jewelry34_1], category: "Casual", occasion: "Everyday", material: "Alloy", description: "Budget everyday earrings.", details: "Lightweight simple wear." },
+  { id: 35, name: "Stylish Affordable Earrings", price: 200, rating: 4, reviews: 9, image: jewelry35_1, images: [jewelry35_1, jewelry35_2], category: "Casual", occasion: "Everyday", material: "Alloy", description: "Stylish affordable earrings.", details: "Comfortable daily wear design." },
 ];
-
-=======
-export const products: Product[] = [
-  {
-    id: 1,
-    name: "Rajsi Pushpa Temple Necklace Set",
-    price: 1999,
-    originalPrice: 2999,
-    rating: 4.2,
-    reviews: 24,
-    image: jewelry1,
-    category: "Necklaces",
-    occasion: "Festival",
-    material: " Gold, Kundan, Pearls",
-    description: "A traditional temple-inspired necklace adorned with ruby-toned stones, emerald accents, and delicate pearl drops, crafted to radiate royal South Indian elegance.",
-    details: "Antique gold finish with ruby and emerald tone stones, pearl detailing, and matching earrings, perfect for weddings and festive wear.",
-    bestseller: true,
-  },
-  {
-    id: 2,
-    name: "Rajwada Emerald Jewel",
-    price: 6999,
-    rating: 4.0,
-    reviews: 65,
-    image: jewelry2,
-    category: "Necklace",
-    occasion: "Festive",
-    material: "Emerald, Pearls",
-    description: "Featuring a striking emerald stone set in intricate antique gold craftsmanship, this pendant embodies heritage, grace, and royal charm.",
-    details: "Antique gold temple-inspired pendant featuring a deep emerald teardrop stone with intricate micro-stone detailing, perfect for weddings and festive occasions.",
-    bestseller: true,
-  },
-  {
-    id: 3,
-    name: "Amora Teardrop Layered Necklace Set",
-    price: 8999,
-    originalPrice: 11499,
-    rating: 4.6,
-    reviews: 156,
-    image: jewelry3,
-    category: "Necklace",
-    occasion: "Festive",
-    material: "Gold, pearls",
-    description: "A delicate layered necklace adorned with shimmering teardrop crystals and a deep violet centerpiece, crafted to add graceful charm to festive and evening looks.",
-    details: "Gold-tone layered necklace featuring crystal teardrop charms with a violet stone centerpiece and matching earrings, perfect for elegant occasions.",
-  },
-  {
-    id: 4,
-    name: "Swarna Crystal Regal Choker",
-    price: 4999,
-    rating: 4.6,
-    reviews: 98,
-    image: jewelry4,
-    category: "Necklace",
-    occasion: "Festival",
-    material: " Gold, Citrine, Diamond",
-    description: "An elegant gold-tone choker embellished with shimmering crystals in a majestic peacock-inspired design, perfect for statement evening wear..",
-    details: "Gold-tone choker adorned with high-shine crystals and matching earrings, ideal for receptions and party occasions.",
-    bestseller: true,
-  },
-  {
-    id: 5,
-    name: "Amethyst Aura Statement Necklace",
-    price: 2999,
-    rating: 4.5,
-    reviews: 32,
-    image: jewelry5,
-    category: "Necklace",
-    occasion: "Everyday",
-    material: "Rose Gold",
-    description: "A bold antique necklace featuring deep amethyst-toned stones framed with micro-crystal detailing, designed for modern royal sophistication",
-    details: "Antique finish necklace featuring deep amethyst stones with micro-crystal accents and matching earrings for elegant evening wear",
-  },
-  {
-    id: 6,
-    name: "Rani Gulzar Bridal Necklace ",
-    price: 5555 ,
-    rating: 4.9,
-    reviews: 67,
-    image: jewelry6,
-    category: "Necklaces",
-    occasion: "Bridal",
-    material: " 22k Gold plating, Natural Pearls",
-    description: "A graceful layered necklace adorned with ruby-toned floral stones and delicate detailing, crafted to enhance bridal charm and feminine elegance..",
-    details: "Floral ruby-toned layered necklace in gold polish with matching earrings, designed for bridal and festive elegance.",
-    bestseller: true,
-  },
-  {
-    id: 7,
-    name: "Gulab Jhumka Earrings",
-    price: 350,
-    originalPrice: 1999,
-    rating: 4.4,
-    reviews: 28,
-    image: jewelry7,
-    category: "Earrings",
-    occasion: "Everyday",
-    material: " Gold Plated Sterling Silver",
-    description: "Elegant gold-tone jhumka earrings adorned with delicate stone detailing, designed to bring timeless festive charm and feminine grace to every look..",
-    details: "Traditional gold-finish jhumka earrings with intricate stone work, perfect for festive, wedding, and ethnic occasions.",
-  },
-  {
-    id: 8,
-    name: "Triveni Antique Drop Chain",
-    price: 750,
-    originalPrice: 1999,
-    rating: 4.5,
-    reviews: 45,
-    image: jewelry8,
-    category: "Necklace",
-    occasion: "Casual",
-    material: " Polki Diamonds",
-    description: "Layered to perfection, This piece adds a subtle glow to every outfit",
-    details: "A timeless triple-layer antique necklace that adds effortless royal elegance to any look",
-  },
-];
->>>>>>> f7a06a277323f42a90484d183d8a24addab6a471

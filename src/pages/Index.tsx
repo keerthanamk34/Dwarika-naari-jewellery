@@ -70,21 +70,21 @@ const Index = () => {
         {heroSlides.map((slide, index) => (
           <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"}`}>
             <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-foreground/60 via-foreground/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent" />
           </div>
         ))}
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4 lg:px-8">
-            <p className="font-body text-xs tracking-[0.4em] uppercase text-gold-light mb-4 animate-fade-in">
-              {heroSlides[currentSlide].subtitle}
+            <p className="font-body text-xs tracking-[0.5em] uppercase text-gold-light mb-5 animate-fade-in">
+              ✦ {heroSlides[currentSlide].subtitle} ✦
             </p>
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-8 whitespace-pre-line leading-tight animate-fade-in" style={{ animationDelay: "0.15s" }}>
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-8 whitespace-pre-line leading-tight tracking-wide animate-fade-in" style={{ animationDelay: "0.15s" }}>
               {heroSlides[currentSlide].title}
             </h1>
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Link
                 to="/shop"
-                className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase bg-gold text-primary-foreground px-8 py-3.5 hover:bg-gold-light hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center gap-3 font-body text-xs tracking-[0.25em] uppercase gradient-gold-btn text-primary-foreground px-10 py-4 shadow-lg hover:shadow-xl transition-all duration-500"
               >
                 {heroSlides[currentSlide].cta} <ArrowRight size={14} />
               </Link>
@@ -98,10 +98,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Ad Banner */}
       <AdBanner />
-
-      {/* Section Divider */}
       <SectionDivider />
 
       {/* Featured Collections */}
@@ -110,8 +107,8 @@ const Index = () => {
         className={`container mx-auto px-4 lg:px-8 py-20 transition-all duration-700 ${collectionsReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         <div className="text-center mb-14">
-          <p className="font-body text-xs tracking-[0.4em] uppercase text-gold mb-2">Curated For You</p>
-          <h2 className="font-display text-4xl lg:text-5xl font-semibold text-foreground">Our Collections</h2>
+          <p className="font-body text-xs tracking-[0.5em] uppercase text-gold mb-3">Curated For You</p>
+          <h2 className="font-display text-4xl lg:text-5xl font-semibold text-foreground tracking-wide">Our Collections</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {collections.map((col) => (
@@ -132,7 +129,7 @@ const Index = () => {
 
       <SectionDivider />
 
-      {/* Best Sellers Carousel */}
+      {/* Best Sellers */}
       <section
         ref={bestsellersReveal.ref}
         className={`bg-card py-20 transition-all duration-700 ${bestsellersReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
@@ -140,8 +137,8 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-end justify-between mb-12">
             <div>
-              <p className="font-body text-xs tracking-[0.4em] uppercase text-gold mb-2">Most Loved</p>
-              <h2 className="font-display text-4xl lg:text-5xl font-semibold text-foreground">Best Sellers</h2>
+              <p className="font-body text-xs tracking-[0.5em] uppercase text-gold mb-3">Most Loved</p>
+              <h2 className="font-display text-4xl lg:text-5xl font-semibold text-foreground tracking-wide">Best Sellers</h2>
             </div>
             <div className="hidden md:flex items-center gap-2">
               <button onClick={() => scroll("left")} className="w-10 h-10 border border-border flex items-center justify-center hover:border-gold hover:text-gold hover:scale-105 transition-all" aria-label="Scroll left">
@@ -152,9 +149,16 @@ const Index = () => {
               </button>
             </div>
           </div>
-          <div ref={scrollRef} className="flex gap-4 lg:gap-6 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory" style={{ scrollbarWidth: "none" }}>
+
+          {/* Desktop grid, mobile carousel */}
+          <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
             {bestsellers.map((product) => (
-              <div key={product.id} className="min-w-[260px] md:min-w-[300px] snap-start">
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+          <div ref={scrollRef} className="md:hidden flex gap-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory" style={{ scrollbarWidth: "none" }}>
+            {bestsellers.map((product) => (
+              <div key={product.id} className="min-w-[260px] snap-start">
                 <ProductCard product={product} />
               </div>
             ))}
@@ -170,8 +174,8 @@ const Index = () => {
         className={`container mx-auto px-4 lg:px-8 py-20 transition-all duration-700 ${testimonialsReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         <div className="text-center mb-14">
-          <p className="font-body text-xs tracking-[0.4em] uppercase text-gold mb-2">What Our Customers Say</p>
-          <h2 className="font-display text-4xl lg:text-5xl font-semibold text-foreground">Testimonials</h2>
+          <p className="font-body text-xs tracking-[0.5em] uppercase text-gold mb-3">What Our Customers Say</p>
+          <h2 className="font-display text-4xl lg:text-5xl font-semibold text-foreground tracking-wide">Testimonials</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
@@ -191,8 +195,8 @@ const Index = () => {
       {/* Newsletter */}
       <section className="bg-foreground py-16">
         <div className="container mx-auto px-4 lg:px-8 text-center">
-          <p className="font-body text-xs tracking-[0.4em] uppercase text-gold-light mb-2">Stay Connected</p>
-          <h2 className="font-display text-3xl lg:text-4xl font-semibold text-primary-foreground mb-3">Subscribe to Our Newsletter</h2>
+          <p className="font-body text-xs tracking-[0.5em] uppercase text-gold-light mb-3">Stay Connected</p>
+          <h2 className="font-display text-3xl lg:text-4xl font-semibold text-primary-foreground mb-3 tracking-wide">Subscribe to Our Newsletter</h2>
           <p className="font-body text-sm text-primary-foreground/50 mb-8 max-w-md mx-auto">
             Be the first to know about new collections, exclusive offers, and styling inspiration.
           </p>
@@ -205,7 +209,7 @@ const Index = () => {
               className="flex-1 bg-primary-foreground/10 border border-primary-foreground/20 px-4 py-3 font-body text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus:outline-none focus:border-gold transition-colors"
               required
             />
-            <button type="submit" className="bg-gold text-primary-foreground font-body text-xs tracking-widest uppercase px-6 py-3 hover:bg-gold-light hover:scale-105 transition-all duration-300">
+            <button type="submit" className="gradient-gold-btn text-primary-foreground font-body text-xs tracking-widest uppercase px-6 py-3 transition-all duration-300">
               Subscribe
             </button>
           </form>
