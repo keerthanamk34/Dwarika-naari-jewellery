@@ -50,7 +50,7 @@ const Navbar = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2.5">
               <img
-                src="/logo.jpeg"
+                src="/logo.jpg"
                 alt="Dwarika Naari"
                 className="h-14 lg:h-16 w-auto object-contain drop-shadow-md"
               />
